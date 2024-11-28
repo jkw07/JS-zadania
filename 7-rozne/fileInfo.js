@@ -5,29 +5,27 @@ Funkcja powinna zwracać obiekt, z właściwościami `name` oraz `extension`.
 Pod name podstaw nazwę przekazanego pliku, a pod extension jego rozszerzenie.
 Jeżeli przekazany plik nie będzie w formacie `nazwa.rozszerzenie` (np. nie będzie miał nazwy plik.jpg), wtedy funkcja powinna zwróć false.*/
 
-const file = prompt("Podaj pełną nazwe pliku w formacie nazwa.rozszerzenie");
-
 function fileInfo(file) {
-  if (!file || !file.includes(".") || file.includes(" ")) {
+  if (file.split(" ").length > 1) {
     return false;
   }
-  const parts = file.split(".");
-  if (!parts[0] || !parts[1] || parts.length > 2) {
+  const [name, extension, ...rest] = file.split(".");
+
+  if (!name.trim() || !extension || rest.length) {
     return false;
   }
-    return {
-      name: parts[0],
-      extension: parts[1],
-    }
+  return {
+    name,
+    extension,
+  };
 }
 
-console.log(fileInfo(file));
+console.log(fileInfo("file"));
 
-/*console.log(fileInfo("obraz.jpg"))
-console.log(fileInfo("obraz"))
-console.log(fileInfo("obraz."))
-console.log(fileInfo(".jpg"))
-console.log(fileInfo(" .jpg"))
-console.log(fileInfo("lala lala.jpg"))
-console.log(fileInfo("bla.bla.jpg"))*/
-
+console.log(fileInfo("obraz.jpg"));
+console.log(fileInfo("obraz"));
+console.log(fileInfo(" obraz."));
+console.log(fileInfo(".jpg"));
+console.log(fileInfo("     .jpg"));
+console.log(fileInfo("lala lala.jpg"));
+console.log(fileInfo("b la.bla.jpg"));

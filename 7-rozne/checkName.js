@@ -29,34 +29,29 @@ const users = [
 ]*/
 
 const users = [
-    "Ania Nowak",
-    "Piotr Kowalski",
-    "Bartek Kosecki",
-    "Natalia Nowak",
-    "Weronika Piotrowska",
-    "Agata Karolak",
-    "Tomasz Nowak",
-    "Mateusz Kowalski",
-    "Marcin Kotecki",
-    "Beata Lecka",
-    "Katarzyna Małecka"
-]
+  "Ania Nowak",
+  "Piotr Kowalski",
+  "Bartek Kosecki",
+  "Natalia Nowak",
+  "Weronika Piotrowska",
+  "Agata Karolak",
+  "Tomasz Nowak",
+  "Mateusz Kowalski",
+  "Marcin Kotecki",
+  "Beata Lecka",
+  "Katarzyna Małecka",
+];
 
 function checkFemale(name) {
-  const firstName = name.split(" ")[0];
-  return firstName[firstName.length-1] === "a";
+  return name.at(-1) === "a";
 }
 
 console.log(checkFemale("Ania"));
 
 function countWomanInTable(arr) {
-  let count = 0;
-  for (let user of arr) {
-    if (checkFemale(user)) {
-      count++;
-    }
-  }
-  return count;
+  const women = arr.filter((fullName) => checkFemale(fullName.split(" ")[0]));
+
+  return women.length;
 }
 
 console.log(countWomanInTable(users));

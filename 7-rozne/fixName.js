@@ -8,14 +8,15 @@ input: "ania"
 wynik:
 Imię Ania rozpoczyna się od litery A*/
 
-const userInput = prompt("Podaj swoje imie");
 function fixName(name) {
-    if (!name) {
-        console.log("Nic nie wpisano");
-    } else {
-        const fixedName = name[0].toUpperCase() + name.slice(1).toLowerCase();
-        console.log(`Imię ${fixedName} zaczyna się od litery ${fixedName[0]}`);
-        return fixedName;
-    }
+  const fixedName = name[0].toUpperCase() + name.slice(1).toLowerCase();
+  return fixedName;
 }
-fixName(userInput);
+
+const userInput = "ania";
+if (!userInput) {
+  console.log("Nic nie wpisano");
+} else {
+  const fixedName = fixName(userInput);
+  console.log(`Imię ${fixedName} zaczyna się od litery ${fixedName[0]}`);
+}

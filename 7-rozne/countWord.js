@@ -11,12 +11,11 @@ wynik:
 Tekst "Koty to fajne zwierzaki" składa się z 4 wyrazów"*/
 
 const txt = prompt("Podaj jakies slowo");
-if (txt == false) { 
-    console.log("Nie mam co liczyc");
-} else { 
-    console.log(`Twoje slowo ${txt} ma ${txt.length} liter`);
+if (txt == false) {
+  console.log("Nie mam co liczyc");
+} else {
+  console.log(`Twoje slowo ${txt} ma ${txt.length} liter`);
 }
-    
 
 //LUB
 
@@ -25,3 +24,5 @@ function countWords(txt) {
     txt == false ? console.log("nie mam czego liczyc") : console.log(`Twoje slowo ${txt} ma ${txt.length} liter`);
 }
 countWords(txt);*/
+
+//SLOW NIE LITER

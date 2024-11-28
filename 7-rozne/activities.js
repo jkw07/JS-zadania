@@ -13,8 +13,8 @@ Wywołaj funkcje przekazując do niej zmienne: twoje imię i dowolny miesiąc.
 Dopisz w funkcji zabezpieczenie, które pozwoli wpisać miesiąc małymi lub dużymi literami. Jeżeli miesiąc jest "innym słowem", 
 funkcja niech zwraca `"Ala uczy się JS"`*/
 
-function whatSheDoes(personName, month) {
-    month = month.toLowerCase();
+function whatSheDoes(personName, month="") {
+    const mth = (month ?? '').toLowerCase(); //nowa nazwa stalej i ?? zamiast ||
     const activities = {
         'grudzien': 'jezdzi na sankach',
         'styczen': 'jezdzi na sankach',
@@ -29,7 +29,7 @@ function whatSheDoes(personName, month) {
         'pazdziernik': 'zbiera liscie',
         'listopad': 'zbiera liscie',
     };
-    console.log(`${personName} ${activities[month] || "uczy sie JS"}`);
+    console.log(`${personName} ${activities[mth] ?? "uczy sie JS"}`); //
 }
 let personName = "Ala";
 let month = "marzec";

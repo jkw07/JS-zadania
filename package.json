@@ -33,5 +33,8 @@
     "postcss-cli": "^8.3.1",
     "sass": "^1.80.5"
   },
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "eslint": "^9.15.0"
+  }
 }

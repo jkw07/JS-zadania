@@ -14,18 +14,16 @@ ______92020
 
 Do wyrównania liczb możesz wykorzystać funkcję `padStart()`. Zakładamy, że pojedyncza linia powinna mieć długość maksymalnie 10 znaków.*/
 
-function generateRandomTable(min,max,count) {
-    const randomTable=[];
-    while (randomTable.length < count) {
-        let number = Math.floor(Math.random()*(max-min+1)+min);
-        randomTable.push(number);
-    }
-    console.log(randomTable);
-    for (const number of randomTable) {
-      let text = number.toString();
-      console.log(text.padStart(10,"_"));
-    }
+function generateRandomTable(min, max, count) {
+  const randomTable = [];
+  while (randomTable.length < count) {
+    let number = Math.floor(Math.random() * (max - min + 1) + min);
+    randomTable.push(number);
+  }
+  for (const number of randomTable) {
+    let text = number.toString();
+    console.log(text.padStart(10, "_"));
+  }
 }
 
-
-generateRandomTable(10,100000,10);
+generateRandomTable(10, 100000, 10);

@@ -22,30 +22,34 @@ let text = "Ala ma kota";
 
 function mix(txt) {
   return txt
-  .split("")
-  .map(letter => Math.random() < 0.5 ? letter.toLowerCase() : letter.toUpperCase())
-  .join("");
+    .split("")
+    .map((letter) =>
+      Math.random() < 0.5 ? letter.toLowerCase() : letter.toUpperCase()
+    )
+    .join("");
 }
 
 console.log(mix(text));
 
-let names = ["Ania" , "Marcin" , "Bartek" , "Piotr"];
+let names = ["Ania", "Marcin", "Bartek", "Piotr"];
 
 function smallNames(arr) {
-  return arr.map(letter => letter.toLowerCase())
+  return arr.map((letter) => letter.toLowerCase());
 }
 
 function bigNames(arr) {
-  return arr.map(letter => letter.toUpperCase())
+  return arr.map((letter) => letter.toUpperCase());
 }
 
 function mixNames(arr) {
-  return names.map(name =>
-   name
+  return arr.map((name) =>
+    name
       .split("")
-      .map(letter => (Math.random() < 0.5 ? letter.toLowerCase() : letter.toUpperCase()))
+      .map((letter) =>
+        Math.random() < 0.5 ? letter.toLowerCase() : letter.toUpperCase()
+      )
       .join("")
-   );
+  );
 }
 
 console.log(names);

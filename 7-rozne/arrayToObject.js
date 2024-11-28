@@ -22,16 +22,22 @@ const ob = {
 }
 ```*/
 
-const tab = [1,1,1,2,2,1,3,3,5,7,5];
+const tab = [1, 1, 1, 2, 2, 1, 3, 3, 5, 7, 5];
 
 function arraySummary(arr) {
-  const objSummary = arr.reduce((acc,num)=>{
-    acc[num] = (acc[num] || 0) + 1;
-    return acc;
-  }, {});
-  objSummary.sum = arr.reduce((total,num)=>total+num,0);
+  const objSummary = arr.reduce(
+    (acc, num) => {
+      if (!acc[num]) {
+        acc[num] = 0;
+      }
+      acc[num]++;
+      acc.sum += num;
+      return acc;
+    },
+    { sum: 0 }
+  );
+
   console.log(objSummary);
 }
-
 
 arraySummary(tab);
