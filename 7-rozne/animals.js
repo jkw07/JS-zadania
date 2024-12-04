@@ -3,6 +3,8 @@ Zrób to na trzy sposoby za pomocą pętli for, for of oraz metody forEach.
 Dodatkowo wypisz długość każdego słowa a na końcu sumę wszystkich liter występujących w tablicy.*/
 
 const animals = ["lama", "borsuk", "chomik", "kot", "pies", "maskonur"];
+
+const animals = ["lama", "borsuk", "chomik", "kot", "pies", "maskonur"];
 let totalLetters1 = 0;
 let totalLetters2 = 0;
 

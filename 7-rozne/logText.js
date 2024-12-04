@@ -11,7 +11,7 @@ function log(txt) {
     number++;
     console.log(`${number}. ${txt}`);
   };
-};
+}
 const text = log();
 text("to jest przykladowy tekst");
 text("to jest drugi tekst");

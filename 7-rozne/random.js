@@ -1,6 +1,6 @@
 /*Stwórz funkcję random(max), która będzie zwracać losową liczbę z zakresu 0 - max. 
 Wykorzystaj tą funkcję do wygenerowania 20-elementowej tablicy. 
-Posortuj tą tablicę, a następnie wypisz sumę oraz średnią wszystkich liczb z tej tablicy.*/
+Posortuj tą tablicę, następnie wypisz sumę oraz średnią wszystkich liczb z tej tablicy.*/
 
 function random(max) {
   return Math.floor(Math.random() * (max + 1));

@@ -19,7 +19,7 @@ Dla utrudnienia możesz zwrócić nową tablicę z imionami pisanymi z dużej li
 
 Wykorzystaj powyższą funkcję aby uzyskać nową tablicę. Stwórz kolejną funkcję countDifferentNames(names), 
 do której przekażesz nowo uzyskaną tablicę. Funkcja powinna zwrócić liczby występowania danego imienia. 
-Idealnym rozwiązaniem będzie, gdy funkcja zwróci te informacje pod postacią obiektu.*/
+Idealnym rozwiązaniem będzie,gdy funkcja zwróci te informacje pod postacią obiektu.*/
 
 const names = [
   "Marcin",

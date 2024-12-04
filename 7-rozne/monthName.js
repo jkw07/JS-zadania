@@ -9,12 +9,24 @@ wynik : październik
 input : monthName("ala")
 wynik : false*/
 
-
 function monthName(nr) {
   if (nr > 12 || nr < 1 || typeof nr !== "number") {
     return false;
   }
-  const months = ["styczeń","luty","marzec","kwiecień","maj","czerwiec","lipiec","sierpień","wrzesień","październik","listopad","grudzień"];
+  const months = [
+    "styczeń",
+    "luty",
+    "marzec",
+    "kwiecień",
+    "maj",
+    "czerwiec",
+    "lipiec",
+    "sierpień",
+    "wrzesień",
+    "październik",
+    "listopad",
+    "grudzień",
+  ];
   return months[nr - 1];
 }
 
