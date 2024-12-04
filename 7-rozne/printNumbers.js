@@ -5,18 +5,18 @@ Funkcja powinna zwrócić tekst, który będzie składał się z kolejnych liczb
 input: printNumbers(12)
 wynik: "123456789101112"*/
 
-const userInput = prompt("Podaj liczbe");
+const userInput = "12";
 
 function printNumbers(number) {
-    if (!number) {
-        console.log("Nic nie wpisano");
-    } else {
-        numbers = number;
-        for (let i = 0; i < 20; i++) {
-            numbers += Math.floor(Math.random() * 10);
-        }
-        return numbers;
+  if (!number) {
+    console.log("Nic nie wpisano");
+  } else {
+    let numbers = "";
+    for (let i = 0; i < number; i++) {
+      numbers += i;
     }
+    return numbers;
+  }
 }
 printNumbers(userInput);
 console.log(numbers);
