@@ -25,11 +25,12 @@ function calculateTotal(items, discount) {
   for (const item of items) {
     sum += item;
   }
-  const afterDiscount = (sum - (sum * discount) / 100).toFixed(2);
+  const afterDiscount = sum - (sum * discount) / 100;
   if (afterDiscount > 100) {
-    const bigDiscount = (afterDiscount - (afterDiscount * 10) / 100).toFixed(2);
-    return bigDiscount;
-  } else return afterDiscount;
-}
+    const bigDiscount = afterDiscount - (afterDiscount * 10) / 100;
 
-console.log(`Total payment is ${calculateTotal([100, 20, 20], 50)}`);
+    return Math.round(bigDiscount * 100) / 100;
+  }
+
+  return Number(afterDiscount.toFixed(2));
+}
