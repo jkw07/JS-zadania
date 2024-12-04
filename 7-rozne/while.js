@@ -22,13 +22,13 @@ function howMany(userInput) {
   if (isNaN(userNumber) || userNumber > max || userNumber < min) {
     console.log("Podana wartosc jest błędna");
     return;
-  };
+  }
   let randomNumber = null;
   let i = 0;
   while (randomNumber !== userNumber) {
-    randomNumber = Math.floor(Math.random()*(max-min+1)+min);
+    randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
     i++;
   }
-    return i;
-};
-console.log(howMany(input))
+  return i;
+}
+console.log(howMany(input));
