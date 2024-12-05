@@ -5,9 +5,7 @@ currentLocation ustawioną na Earth
 flyDistance ustawione na 0
 Metody:
 flyTo(place, distance), która ustawi obiektowi właściwość currentLocation na odpowiednie miejsce podane w parametrze place oraz doliczy przebyty dystans do flyDistance.
-
 Metodę showInfo(), która wypisze w konsoli tekst:
-
 Informacje o statku:
 ----
 Statek ....
@@ -37,11 +35,13 @@ const spaceShip = {
   },
   meetClingon() {
     const numbers = new Array(100).fill().map(() => Math.random());
-    console.log(
-      numbers.filter((num) => num > 0.5).length >= numbers.length / 2
-        ? `Statek ${this.name} będący w okolicy ${this.currentLocation} zwycięsko wyszedł ze spotkania z Klingonami`
-        : `Statek ${this.name} będący w okolicy ${this.currentLocation} został pokonany przez Klingonów`
-    );
+    numbers.filter((num) => num > 0.5).length >= numbers.length / 2
+      ? console.log(
+          `Statek ${this.name} będący w okolicy ${this.currentLocation} zwycięsko wyszedł ze spotkania z Klingonami`
+        )
+      : alert(
+          `Statek ${this.name} będący w okolicy ${this.currentLocation} został pokonany przez Klingonów`
+        );
   },
 };
 
