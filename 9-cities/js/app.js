@@ -18,23 +18,25 @@ const population = cities.reduce(
 console.log(`Łączna populacja: ${population}`);
 
 //Zadanie 3 Wypisz pierwsze miasto, w którym jest ponad 10000 ludzi
+console.log("Pierwsze miasto, w którym jest ponad 10000 ludzi:");
 console.log(cities.find((city) => city.people > 10000));
 
 //Zadanie 4 Wypisz miasta, w których ludzi jest ponad średnią
-const average = Math.floor(population / cities.length);
-console.log(cities.filter((city) => city.people > average));
+console.log("Miasta, w których ludzi jest ponad średnią:");
+console.log(
+  cities.filter((city) => city.people > Math.floor(population / cities.length))
+);
 
 //Zadanie 5 Wypisz nazwy wszystkich miast, w których jest ponad 10000 ludzi
+console.log("Nazwy wszystkich miast, w których jest ponad 10000 ludzi:");
 const bigCities = cities.filter((city) => city.people > 10000);
 bigCities.forEach((city) => console.log(city.name));
 
 //Zadanie 6 Wypisz czy więcej jest miast z > 10000 ludzi czy mniejszych
-console.log(bigCities.length);
-console.log(cities.length - bigCities.length);
-const citySize =
+console.log(
   bigCities.length > cities.length / 2
     ? "Więcej jest miast z > 10000 ludzi"
     : bigCities.length < cities.length / 2
     ? "Więcej jest mniejszych miast"
-    : "Jest tyle samo dużych i małych miast";
-console.log(citySize);
+    : "Jest tyle samo dużych i małych miast"
+);
