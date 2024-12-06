@@ -69,7 +69,8 @@ const worldMediumAge = Math.floor(
 console.log(`Srednia wieku na świecie: ${worldMediumAge}`);
 
 //Zadanie 8 Wypisz wszystkie dane na temat Polski
-console.log(countries.find((country) => country.name === "Poland"));
+const poland = countries.find((country) => country.name === "Poland");
+console.log(poland);
 
 //Zadanie 9 Sprawdź czy średnia wieku w Polsce jest większa od średniej na Świecie.
 console.log(
