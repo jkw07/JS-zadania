@@ -29,14 +29,18 @@ console.log(
 
 //Zadanie 5 Wypisz nazwy wszystkich miast, w których jest ponad 10000 ludzi
 console.log("Nazwy wszystkich miast, w których jest ponad 10000 ludzi:");
-const bigCities = cities.filter((city) => city.people > 10000);
-bigCities.forEach((city) => console.log(city.name));
+const bigCitiesNames = cities.reduce((acc, city) => {
+  if (city.people > 10000) {
+    acc.push(city.name);
+  }
+  return acc;
+}, []);
 
 //Zadanie 6 Wypisz czy więcej jest miast z > 10000 ludzi czy mniejszych
 console.log(
-  bigCities.length > cities.length / 2
+  bigCitiesNames.length > cities.length / 2
     ? "Więcej jest miast z > 10000 ludzi"
-    : bigCities.length < cities.length / 2
+    : bigCitiesNames.length < cities.length / 2
     ? "Więcej jest mniejszych miast"
     : "Jest tyle samo dużych i małych miast"
 );

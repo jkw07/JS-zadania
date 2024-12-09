@@ -34,8 +34,11 @@ const spaceShip = {
     Statek przeleciał już całkowity dystans ${this.flyDistance}`);
   },
   meetClingon() {
-    const numbers = new Array(100).fill().map(() => Math.random());
-    numbers.filter((num) => num > 0.5).length >= numbers.length / 2
+    const randomNumbers = new Array(100).fill().map(() => Math.random());
+    const numbersGreaterThanHalf = randomNumbers.filter((num) => num > 0.5);
+    const hasMoreThanHalf =
+      numbersGreaterThanHalf.length > randomNumbers.length / 2;
+    hasMoreThanHalf
       ? console.log(
           `Statek ${this.name} będący w okolicy ${this.currentLocation} zwycięsko wyszedł ze spotkania z Klingonami`
         )

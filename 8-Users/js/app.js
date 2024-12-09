@@ -30,14 +30,24 @@ const names = users.map((user) => user.name.split(" ")[0].toUpperCase());
 console.log(names);
 
 //8.Wypisz liczbę kobiet i liczbę mężczyzn Wypisz tekst, która grupa jest liczniejsza (np. "kobiety wygrywają")
-const men = users.filter((user) => user.gender === "male");
-const women = users.filter((user) => user.gender === "female");
-console.log(`Liczba kobiet: ${women.length}
-Liczba mężczyzn: ${men.length}`);
+const genders = users.reduce(
+  (acc, user) => {
+    if (user.gender === "male") {
+      acc.male++;
+    }
+    if (user.gender === "female") {
+      acc.female++;
+    }
+    return acc;
+  },
+  { female: 0, male: 0 }
+);
+
+console.log(genders);
 console.log(
-  women.length > men.length
+  genders.female > genders.male
     ? "Kobiety wygrywają"
-    : women.length < men.length
+    : genders.female < genders.male
     ? "Mężczyźni wygrywają"
     : "Nikt nie wygrywa"
 );

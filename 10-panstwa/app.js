@@ -40,33 +40,39 @@ console.log(
 );
 
 //Zadanie 6 Napisz ile wynosi średnia dzietności na świecie (fertility_rate) (uwaga - niektóre kraje nie mają danych - wtedy jest null)
-const countriesWithFertilityRate = countries.filter(
-  (country) => country.fertility_rate
+const fertilityData = countries.reduce(
+  (acc, country) => {
+    if (country.fertility_rate) {
+      acc.countryCount++;
+      acc.totalFertilityRate += country.fertility_rate;
+    }
+    return acc;
+  },
+  { countryCount: 0, totalFertilityRate: 0 }
 );
+console.log(fertilityData);
 console.log(
-  `Srednia dzietności na świecie: ${
-    Math.floor(
-      (countriesWithFertilityRate.reduce(
-        (accumulator, country) => accumulator + country.fertility_rate,
-        0
-      ) /
-        countriesWithFertilityRate.length) *
-        100
-    ) / 100
+  `Średnia dzietności na świecie wynosi: ${
+    fertilityData.totalFertilityRate / fertilityData.countryCount
   }`
 );
 
 //Zadanie 7 Napisz ile wynosi średnia wieku na świecie
-const countriesWithMediumAge = countries.filter(
-  (country) => country.medium_age
+const mediumAgeData = countries.reduce(
+  (acc, country) => {
+    if (country.medium_age) {
+      acc.countryCount++;
+      acc.totalMediumAge += country.medium_age;
+    }
+    return acc;
+  },
+  { countryCount: 0, totalMediumAge: 0 }
 );
-const worldMediumAge = Math.floor(
-  countriesWithMediumAge.reduce(
-    (accumulator, country) => accumulator + country.medium_age,
-    0
-  ) / countriesWithMediumAge.length
-);
-console.log(`Srednia wieku na świecie: ${worldMediumAge}`);
+const worldMediumAge =
+  mediumAgeData.totalMediumAge / mediumAgeData.countryCount;
+
+console.log(mediumAgeData);
+console.log(`Średnia wieku na świecie wynosi: ${worldMediumAge}`);
 
 //Zadanie 8 Wypisz wszystkie dane na temat Polski
 const poland = countries.find((country) => country.name === "Poland");
