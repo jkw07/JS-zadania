@@ -4,7 +4,6 @@ const worldCupYear = document.getElementById("year");
 const headCoach = document.getElementById("head-coach");
 const playerCards = document.getElementById("player-cards");
 const playersDropdownList = document.getElementById("players");
-
 const myFavoriteFootballTeam = {
   team: "Argentina",
   sport: "Football",
@@ -167,7 +166,7 @@ const myFavoriteFootballTeam = {
       position: "goalkeeper",
       number: 22,
       isCaptain: false,
-      nickname: ,
+      nickname: null,
     },
   ],
 };
@@ -191,7 +190,7 @@ const setPlayerCards = (arr = players) => {
     .map(({ name, position, number, isCaptain, nickname }) => {
       return `
         <div class="player-card">
-          <h2>${isCaptain ? "(Captain)"  : ""}${name}</h2>
+          <h2>${isCaptain ? "(Captain)" : ""}${name}</h2>
           <p>Position: ${position}</p>
           <p>Number: ${number}</p>
           <p>Nickname: ${nickname || "N/A"}</p>
