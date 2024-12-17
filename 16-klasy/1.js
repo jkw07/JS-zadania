@@ -32,7 +32,7 @@ class User {
       dateStyle: "full",
       timeStyle: "long",
     }).format(new Date());
-    this.loginDates.push(currentDate);
+    this.loginDates.push(Date.now());
   }
   showLoginDates() {
     console.log(`Daty logowań uzytkownika ${this.nick}:`);
@@ -45,7 +45,7 @@ class User {
     }
   }
   toggleActive(active) {
-    this.active ? (this.active = false) : (this.active = true);
+    this.active = !this.active;
     console.log(
       `Użytkownik ${this.nick} jest teraz ${
         this.active ? "aktywny" : "nieaktywny"
@@ -84,9 +84,14 @@ console.log(users);
 user1.logIn();
 user2.logIn();
 user1.logIn();
+await sleep(3000);
 user1.logIn();
 user1.logIn();
 user1.showLoginDates();
 user1.showDetails();
 user1.toggleActive();
 user1.toggleActive();
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
