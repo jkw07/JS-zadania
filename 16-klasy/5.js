@@ -50,3 +50,18 @@ sprawdź czy po wymianie ciosów któryś z walczących wojowników jest równy 
 oraz czy w tablicy pozostały jeszcze jakieś postacie. Jeżeli tablica jest pusta, 
 oznacza to, że na polu walki pozostał zwycięzca. Dodaj odpowiednią informację do loga i 
 zakończ turniej zwracając false. */
+
+const names = [
+  "Baraka",
+  "Jax",
+  "Johnny Cage",
+  "Kitana",
+  "Kung Lao",
+  "Liu Kang",
+  "Mileena",
+  "Raiden",
+  "Reptile",
+  "Scorpion",
+  "Shang Tsung",
+  "Sub-Zero",
+];
