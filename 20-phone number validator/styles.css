@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
+button {
+  background-color: yellow;
+  font-size: 16px;
+  border: 2px solid red;
+  font-weight: bold;
+  margin: 10px auto;
+}
