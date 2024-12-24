@@ -10,4 +10,4 @@ String.prototype.mirror = function () {
 const text1 = "Ala ma kota";
 const text2 = text1.mirror();
 console.log(text2);
-console.log("Blablabla bla".mirror());
+console.log("12345".mirror());

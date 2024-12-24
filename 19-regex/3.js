@@ -29,9 +29,9 @@ Oczekiwany wynik:
 Nie powinny pasować fragmenty z nieprawidłowymi hashtagami, np. #Hello! (zawiera niedozwolony znak !). */
 
 const text7 =
-  "#HelloWorld is trending! Check out #regex_challenge and #100DaysOfCode.";
-const regex12 = /#\w+\b/g;
-const regex13 = /#\w+(?=\s|$)/g;
+  "#HelloWorld is trending! Check out #regex_challenge #HEllo! and #100DaysOfCode.";
+const regex12 = /#\w+\b(?!!)/g;
+const regex13 = /#\w+(?=\s|,|\.|$)/g;
 console.log(text7.match(regex12));
 
 /* Zadanie 3: Walidacja adresu e-mail

@@ -13,7 +13,7 @@ const denyList = [helpRegex, dollarRegex, freeRegex, stockRegex, dearRegex];
 const isSpam = (msg) => denyList.some((regex) => regex.test(msg));
 
 checkMessageButton.addEventListener("click", () => {
-  if (messageInput.value === "") {
+  if (!messageInput.value) {
     alert("Please enter a message.");
     return;
   }
