@@ -43,8 +43,7 @@ input.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     e.preventDefault();
     checkUserInput();
-  }
-  if (e.key === "Delete") {
+  } else if (e.key === "Delete") {
     output.textContent = "";
     input.value = "";
     clearButton.classList.add("hidden");
