@@ -32,7 +32,7 @@ const checkUserInput = () => {
     message = "Please enter a number less than or equal to 3999";
   } else {
     message = arabicToRoman(inputNumber);
-    clearButton.classList.toggle("hidden");
+    clearButton.classList.remove("hidden");
   }
   output.textContent = message;
 };
@@ -41,14 +41,20 @@ convertButton.addEventListener("click", checkUserInput);
 
 input.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
+    e.preventDefault();
     checkUserInput();
+  }
+  if (e.key === "Delete") {
+    output.textContent = "";
+    input.value = "";
+    clearButton.classList.add("hidden");
   }
 });
 
 clearButton.addEventListener("click", () => {
   output.textContent = "";
   input.value = "";
-  clearButton.classList.toggle("hidden");
+  clearButton.classList.add("hidden");
 });
 
 function arabicToRoman(number) {
