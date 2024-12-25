@@ -1,0 +1,47 @@
+body {
+  background-color: #1b1b32;
+  box-sizing: border-box;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  color: whitesmoke;
+  font-size: 18px;
+  margin: 30px;
+}
+h1 {
+  text-align: center;
+  margin: 20px auto;
+}
+p {
+  font-size: 14px;
+  text-align: center
+}
+form {
+  border: 2px solid whitesmoke;
+  text-align: center
+}
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+input, button {
+  height: 30px;
+  font-size: 18px;
+  width: auto;
+}
+.convert-btn {
+  background-color: #f1be32
+}
+.hidden {
+  display: none;
+}
+.output {
+  justify-content: center;
+  border: 2px solid whitesmoke;
+  height: 50px;
+  margin-top: 20px;
+display: flex;
+align-items: center;
+font-size: 18px;
+}
