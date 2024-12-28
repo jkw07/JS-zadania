@@ -119,3 +119,6 @@ input[type="radio"]:disabled + label {
     width: 120px;
   }
 }
+.hidden {
+  display: none
+}
