@@ -11,28 +11,27 @@ Dodaj do każdego linka w ul zdarzenie CLICK. Po kliknięciu powinien pojawić s
 Dla linka w li.active usuń zdarzenie click (tak by nie pojawiał sie alert po kliknięciu) */
 
 const ulElement = document.querySelector("ul");
-const ilElements = document.querySelectorAll("li");
+const liElements = document.querySelectorAll("li");
 const links = document.querySelectorAll("a");
 
 ulElement.classList.add("menu");
 liElements[0].classList.add("first");
 liElements[2].classList.add("active");
-liElements[liElements.length-1].classList.add("last");
+liElements[liElements.length - 1].classList.add("last");
 
 liElements[2].style.color = "#fff";
 
-links.forEach((link) => {
-    link.title = `Przejdź na stronę ${link.textContent}`;
-    link.href = '#';
-    link.addEventListener('click', {
-        alert(`Kliknięto ${link.textContent}`);
-    });
-}
-);
-
 const activeLink = document.querySelector(".active a");
 if (activeLink) {
-    activeLink.removeEventListener('click', {
-        alert(`Kliknięto ${activeLink.textContent}`);
-    })
+  activeLink.addEventListener("click", (event) => {
+    event.stopImmediatePropagation();
+  });
 }
+
+links.forEach((link) => {
+  link.title = `Przejdź na stronę ${link.textContent}`;
+  link.href = "#";
+  link.addEventListener("click", (event) => {
+    alert(`Kliknięto ${link.textContent}`);
+  });
+});
