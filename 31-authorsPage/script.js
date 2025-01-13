@@ -2,23 +2,22 @@ const authorContainer = document.getElementById("author-container");
 const loadMoreBtn = document.getElementById("load-more-btn");
 
 let startingIndex = 0;
-let endingIndex = 8;
+const offset = 8;
 let authorDataArr = [];
 
 fetch("https://cdn.freecodecamp.org/curriculum/news-author-page/authors.json")
   .then((res) => res.json())
   .then((data) => {
     authorDataArr = data;
-    displayAuthors(authorDataArr.slice(startingIndex, endingIndex));
+    displayAuthors(authorDataArr.slice(startingIndex, offset));
   })
   .catch((err) => {
     authorContainer.innerHTML =
       '<p class="error-msg">There was an error loading the authors</p>';
   });
 
-const fetchMoreAuthors = () => {
-  startingIndex += 8;
-  endingIndex += 8;
+const fetchMoreAuthors = (startingIndex, offset) => {
+  const endingIndex = startingIndex + offset;
 
   displayAuthors(authorDataArr.slice(startingIndex, endingIndex));
   if (authorDataArr.length <= endingIndex) {
@@ -42,4 +41,8 @@ const displayAuthors = (authors) => {
   });
 };
 
-loadMoreBtn.addEventListener("click", fetchMoreAuthors);
+loadMoreBtn.addEventListener("click", () => {
+  startingIndex += offset;
+  fetchMoreAuthors(startingIndex, offset);
+  console.log("starting indedx", startingIndex);
+});
